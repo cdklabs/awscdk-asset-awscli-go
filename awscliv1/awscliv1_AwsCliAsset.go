@@ -183,6 +183,9 @@ func (j *jsiiProxy_AwsCliAsset) S3ObjectUrl() *string {
 func NewAwsCliAsset(scope constructs.Construct, id *string, options *awss3assets.AssetOptions) AwsCliAsset {
 	_init_.Initialize()
 
+	if err := validateNewAwsCliAssetParameters(scope, id, options); err != nil {
+		panic(err)
+	}
 	j := jsiiProxy_AwsCliAsset{}
 
 	_jsii_.Create(
@@ -211,6 +214,9 @@ func NewAwsCliAsset_Override(a AwsCliAsset, scope constructs.Construct, id *stri
 func AwsCliAsset_IsConstruct(x interface{}) *bool {
 	_init_.Initialize()
 
+	if err := validateAwsCliAsset_IsConstructParameters(x); err != nil {
+		panic(err)
+	}
 	var returns *bool
 
 	_jsii_.StaticInvoke(
@@ -224,6 +230,9 @@ func AwsCliAsset_IsConstruct(x interface{}) *bool {
 }
 
 func (a *jsiiProxy_AwsCliAsset) AddResourceMetadata(resource awscdk.CfnResource, resourceProperty *string) {
+	if err := a.validateAddResourceMetadataParameters(resource, resourceProperty); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		a,
 		"addResourceMetadata",
@@ -232,6 +241,9 @@ func (a *jsiiProxy_AwsCliAsset) AddResourceMetadata(resource awscdk.CfnResource,
 }
 
 func (a *jsiiProxy_AwsCliAsset) GrantRead(grantee awsiam.IGrantable) {
+	if err := a.validateGrantReadParameters(grantee); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		a,
 		"grantRead",
