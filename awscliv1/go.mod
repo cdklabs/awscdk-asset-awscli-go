@@ -1,4 +1,4 @@
-module github.com/cdklabs/awscdk-asset-awscli-go/awscliv1
+module github.com/cdklabs/awscdk-asset-awscli-go/awscliv1/v2
 
 go 1.16
 
