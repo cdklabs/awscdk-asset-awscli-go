@@ -5,24 +5,17 @@
 package jsii
 
 import (
-	_          "embed"
+	_      "embed"
 
-	_jsii_     "github.com/aws/jsii-runtime-go/runtime"
-
-	awscdk     "github.com/aws/aws-cdk-go/awscdk/v2/jsii"
-	constructs "github.com/aws/constructs-go/constructs/v10/jsii"
+	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
 )
 
-//go:embed aws-cdk-asset-awscli-v1-2.1.26.tgz
+//go:embed aws-cdk-asset-awscli-v1-2.2.0.tgz
 var tarball []byte
 
 // Initialize loads the necessary packages in the @jsii/kernel to support the enclosing module.
 // The implementation is idempotent (and hence safe to be called over and over).
 func Initialize() {
-	// Ensure all dependencies are initialized
-	awscdk.Initialize()
-	constructs.Initialize()
-
 	// Load this library into the kernel
-	_jsii_.Load("@aws-cdk/asset-awscli-v1", "2.1.26", tarball)
+	_jsii_.Load("@aws-cdk/asset-awscli-v1", "2.2.0", tarball)
 }
