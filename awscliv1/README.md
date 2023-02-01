@@ -19,19 +19,20 @@ Usage:
 
 ```go
 // AwsCliLayer bundles the AWS CLI in a lambda layer
-import { ASSET_FILE, LAYER_SOURCE_DIR } from '@aws-cdk/asset-awscli-v1';
-import * as lambda from 'aws-cdk-lib/aws-lambda';
-import * as s3_assets from 'aws-cdk-lib/aws-s3-assets';
-import { FileSystem } from 'aws-cdk-lib';
+import "github.com/aws-samples/dummy/awscdkassetawscliv1"
+import lambda "github.com/aws/aws-cdk-go/awscdk"
+import s3_assets "github.com/aws/aws-cdk-go/awscdk"
+import "github.com/aws/aws-cdk-go/awscdk"
 
-declare const fn: lambda.Function;
-const asset = new s3_assets.Asset(this, 'layer-asset', {
-  path: ASSET_FILE,
-  assetHash: FileSystem.fingerprint(LAYER_SOURCE_DIR),
-});
-fn.addLayers(new lambda.LayerVersion(this, 'AwsCliLayer', {
-  code: lambda.Code.fromBucket(asset.bucket, asset.s3ObjectKey),
-}));
+var fn function
+
+asset := s3_assets.NewAsset(this, jsii.String("layer-asset"), &assetProps{
+	path: *awscdkassetawscliv1.ASSET_FILE,
+	assetHash: awscdk.FileSystem.fingerprint(*awscdkassetawscliv1.LAYER_SOURCE_DIR),
+})
+fn.addLayers(lambda.NewLayerVersion(this, jsii.String("AwsCliLayer"), &layerVersionProps{
+	code: lambda.code.fromBucket(asset.bucket, asset.s3ObjectKey),
+}))
 ```
 
 The CLI will be installed under `/opt/awscli/aws`.
