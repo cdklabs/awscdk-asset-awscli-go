@@ -17,14 +17,19 @@ This module exports a single class called `AwsCliAsset` which is an `s3_assets.A
 Usage:
 
 ```go
+// Example automatically generated from non-compiling source. May contain errors.
 // AwsCliLayer bundles the AWS CLI in a lambda layer
-import { AwsCliAsset } from '@aws-cdk/asset-awscli-v2';
+import "github.com/aws-samples/dummy/awscdkassetawscliv2"
+import "github.com/aws/aws-cdk-go/awscdk"
+import s3_assets "github.com/aws/aws-cdk-go/awscdk"
+import "github.com/aws/aws-cdk-go/awscdk"
 
-declare const fn: lambda.Function;
-const awscli = new AwsCliAsset(this, 'AwsCliCode');
-fn.addLayers(new lambda.LayerVersion(this, 'AwsCliLayer', {
-  code: lambda.Code.fromBucket(awscli.bucket, awscli.s3ObjectKey),
-}));
+var fn function
+
+awscli := awscdkassetawscliv2.NewAwsCliAsset(this, jsii.String("AwsCliCode"))
+fn.AddLayers(lambda.NewLayerVersion(this, jsii.String("AwsCliLayer"), &LayerVersionProps{
+	Code: lambda.Code_FromBucket(awscli.bucket, awscli.s3ObjectKey),
+}))
 ```
 
 The CLI will be installed under `/opt/awscli/aws`.
