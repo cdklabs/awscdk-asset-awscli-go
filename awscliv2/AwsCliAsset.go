@@ -3,14 +3,14 @@ package awscliv2
 
 import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
-	_init_ "github.com/cdklabs/awscdk-asset-awscli-go/awscliv2/jsii"
+	_init_ "github.com/cdklabs/awscdk-asset-awscli-go/awscliv2/v2/jsii"
 
 	"github.com/aws/aws-cdk-go/awscdk/v2"
 	"github.com/aws/aws-cdk-go/awscdk/v2/awsiam"
 	"github.com/aws/aws-cdk-go/awscdk/v2/awss3"
 	"github.com/aws/aws-cdk-go/awscdk/v2/awss3assets"
 	"github.com/aws/constructs-go/constructs/v10"
-	"github.com/cdklabs/awscdk-asset-awscli-go/awscliv2/internal"
+	"github.com/cdklabs/awscdk-asset-awscli-go/awscliv2/v2/internal"
 )
 
 // A CDK Asset construct that contains the AWS CLI.
