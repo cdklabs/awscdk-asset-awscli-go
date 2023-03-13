@@ -5,8 +5,8 @@ go 1.18
 require (
 	github.com/aws/jsii-runtime-go v1.77.0
 	github.com/aws/aws-cdk-go/awscdk/v2 v2.68.0
-	github.com/aws/constructs-go/constructs/v10 v10.1.275
-	github.com/cdklabs/awscdk-asset-awscli-go/awscliv1/v2 v2.2.101 // indirect
+	github.com/aws/constructs-go/constructs/v10 v10.1.276
+	github.com/cdklabs/awscdk-asset-awscli-go/awscliv1/v2 v2.2.102 // indirect
 	github.com/cdklabs/awscdk-asset-kubectl-go/kubectlv20/v2 v2.1.1 // indirect
-	github.com/cdklabs/awscdk-asset-node-proxy-agent-go/nodeproxyagentv5/v2 v2.0.81 // indirect
+	github.com/cdklabs/awscdk-asset-node-proxy-agent-go/nodeproxyagentv5/v2 v2.0.82 // indirect
 )
