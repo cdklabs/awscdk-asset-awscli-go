@@ -3,10 +3,10 @@ module github.com/cdklabs/awscdk-asset-awscli-go/awscliv2/v2
 go 1.18
 
 require (
-	github.com/aws/jsii-runtime-go v1.78.1
+	github.com/aws/jsii-runtime-go v1.79.0
 	github.com/aws/aws-cdk-go/awscdk/v2 v2.70.0
-	github.com/aws/constructs-go/constructs/v10 v10.1.288
-	github.com/cdklabs/awscdk-asset-awscli-go/awscliv1/v2 v2.2.114 // indirect
+	github.com/aws/constructs-go/constructs/v10 v10.1.289
+	github.com/cdklabs/awscdk-asset-awscli-go/awscliv1/v2 v2.2.115 // indirect
 	github.com/cdklabs/awscdk-asset-kubectl-go/kubectlv20/v2 v2.1.1 // indirect
-	github.com/cdklabs/awscdk-asset-node-proxy-agent-go/nodeproxyagentv5/v2 v2.0.92 // indirect
+	github.com/cdklabs/awscdk-asset-node-proxy-agent-go/nodeproxyagentv5/v2 v2.0.93 // indirect
 )
