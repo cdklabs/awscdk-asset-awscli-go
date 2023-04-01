@@ -18,21 +18,20 @@ runtime.
 Usage:
 
 ```go
-// Example automatically generated from non-compiling source. May contain errors.
 // AwsCliLayer bundles the AWS CLI in a lambda layer
 import "github.com/aws-samples/dummy/awscdkassetawscliv1"
-import "github.com/aws-samples/dummy/awscdklib/awslambda"
-import s3_assets "github.com/aws-samples/dummy/awscdklib/awss3assets"
+import "github.com/aws/aws-cdk-go/awscdk"
+import s3_assets "github.com/aws/aws-cdk-go/awscdk"
 import "github.com/aws-samples/dummy/awscdklib"
 
-var fn lambda.Function
+var fn function
 
-asset := s3_assets.NewAsset(this, jsii.String("layer-asset"), map[string]*string{
-	"path": awscdkassetawscliv1.ASSET_FILE,
-	"assetHash": awscdklib.FileSystem_fingerprint(awscdkassetawscliv1.LAYER_SOURCE_DIR),
+asset := s3_assets.NewAsset(this, jsii.String("layer-asset"), &assetProps{
+	path: awscdkassetawscliv1.ASSET_FILE,
+	assetHash: *awscdklib.FileSystem_Fingerprint(*awscdkassetawscliv1.LAYER_SOURCE_DIR),
 })
-fn.addLayers(lambda.NewLayerVersion(this, jsii.String("AwsCliLayer"), map[string]interface{}{
-	"code": lambda.Code_fromBucket(asset.bucket, asset.s3ObjectKey),
+fn.addLayers(lambda.NewLayerVersion(this, jsii.String("AwsCliLayer"), &layerVersionProps{
+	code: lambda.code_FromBucket(asset.bucket, asset.s3ObjectKey),
 }))
 ```
 
