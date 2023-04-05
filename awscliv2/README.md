@@ -22,13 +22,13 @@ Usage:
 import "github.com/aws-samples/dummy/awscdkassetawscliv2"
 import "github.com/aws/aws-cdk-go/awscdk"
 import s3_assets "github.com/aws/aws-cdk-go/awscdk"
-import "github.com/aws-samples/dummy/awscdklib"
+import "github.com/aws/aws-cdk-go/awscdk"
 
 var fn function
 
 awscli := awscdkassetawscliv2.NewAwsCliAsset(this, jsii.String("AwsCliCode"))
-fn.addLayers(lambda.NewLayerVersion(this, jsii.String("AwsCliLayer"), &layerVersionProps{
-	code: lambda.code_FromBucket(awscli.bucket, awscli.s3ObjectKey),
+fn.AddLayers(lambda.NewLayerVersion(this, jsii.String("AwsCliLayer"), &LayerVersionProps{
+	Code: lambda.Code_FromBucket(awscli.bucket, awscli.s3ObjectKey),
 }))
 ```
 
