@@ -22,16 +22,16 @@ Usage:
 import "github.com/aws-samples/dummy/awscdkassetawscliv1"
 import "github.com/aws/aws-cdk-go/awscdk"
 import s3_assets "github.com/aws/aws-cdk-go/awscdk"
-import "github.com/aws-samples/dummy/awscdklib"
+import "github.com/aws/aws-cdk-go/awscdk"
 
 var fn function
 
-asset := s3_assets.NewAsset(this, jsii.String("layer-asset"), &assetProps{
-	path: awscdkassetawscliv1.ASSET_FILE,
-	assetHash: *awscdklib.FileSystem_Fingerprint(*awscdkassetawscliv1.LAYER_SOURCE_DIR),
+asset := s3_assets.NewAsset(this, jsii.String("layer-asset"), &AssetProps{
+	Path: awscdkassetawscliv1.ASSET_FILE,
+	AssetHash: awscdk.FileSystem_Fingerprint(*awscdkassetawscliv1.LAYER_SOURCE_DIR),
 })
-fn.addLayers(lambda.NewLayerVersion(this, jsii.String("AwsCliLayer"), &layerVersionProps{
-	code: lambda.code_FromBucket(asset.bucket, asset.s3ObjectKey),
+fn.AddLayers(lambda.NewLayerVersion(this, jsii.String("AwsCliLayer"), &LayerVersionProps{
+	Code: lambda.Code_FromBucket(asset.Bucket, asset.S3ObjectKey),
 }))
 ```
 
