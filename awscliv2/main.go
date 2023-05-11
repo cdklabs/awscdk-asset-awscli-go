@@ -1,3 +1,4 @@
+// An Asset construct that contains the AWS CLI, for use in Lambda Layers
 package awscliv2
 
 import (
