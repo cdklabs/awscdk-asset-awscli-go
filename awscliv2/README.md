@@ -17,18 +17,17 @@ This module exports a single class called `AwsCliAsset` which is an `s3_assets.A
 Usage:
 
 ```go
-// Example automatically generated from non-compiling source. May contain errors.
 // AwsCliLayer bundles the AWS CLI in a lambda layer
-import "github.com/aws-samples/dummy/awscdkassetawscliv2"
+import "github.com/cdklabs/awscdk-asset-awscli-go/awscliv2"
 import "github.com/aws/aws-cdk-go/awscdk"
 import s3_assets "github.com/aws/aws-cdk-go/awscdk"
 import "github.com/aws/aws-cdk-go/awscdk"
 
 var fn function
 
-awscli := awscdkassetawscliv2.NewAwsCliAsset(this, jsii.String("AwsCliCode"))
+awscli := awscliv2.NewAwsCliAsset(this, jsii.String("AwsCliCode"))
 fn.AddLayers(lambda.NewLayerVersion(this, jsii.String("AwsCliLayer"), &LayerVersionProps{
-	Code: lambda.Code_FromBucket(awscli.bucket, awscli.s3ObjectKey),
+	Code: lambda.Code_FromBucket(awscli.Bucket, awscli.S3ObjectKey),
 }))
 ```
 
