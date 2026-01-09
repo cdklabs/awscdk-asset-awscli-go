@@ -23,7 +23,7 @@ import "github.com/aws/aws-cdk-go/awscdk"
 import s3_assets "github.com/aws/aws-cdk-go/awscdk"
 import "github.com/aws/aws-cdk-go/awscdk"
 
-var fn function
+var fn Function
 
 awscli := awscliv2.NewAwsCliAsset(this, jsii.String("AwsCliCode"))
 fn.AddLayers(lambda.NewLayerVersion(this, jsii.String("AwsCliLayer"), &LayerVersionProps{
