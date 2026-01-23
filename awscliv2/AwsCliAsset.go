@@ -64,6 +64,8 @@ type AwsCliAsset interface {
 	//
 	AddResourceMetadata(resource awscdk.CfnResource, resourceProperty *string)
 	// Grants read permissions to the principal on the assets bucket.
+	//
+	// [disable-awslint:no-grants].
 	GrantRead(grantee awsiam.IGrantable)
 	// Returns a string representation of this construct.
 	ToString() *string
